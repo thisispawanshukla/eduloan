@@ -1,4 +1,5 @@
 // In-memory store for loan applications (mock database)
+let nextId = 1;
 const loanApplications: {
   id: number;
   studentName: string;
@@ -30,7 +31,7 @@ export async function POST(request: Request) {
     }
 
     const newApplication = {
-      id: loanApplications.length + 1,
+      id: nextId++,
       studentName: String(studentName).trim(),
       university: String(university).trim(),
       courseOfStudy: String(courseOfStudy).trim(),

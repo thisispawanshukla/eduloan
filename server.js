@@ -3,6 +3,7 @@ const app = express();
 app.use(express.json());
 
 // In-memory mock database
+let nextId = 1;
 const loanApplications = [];
 
 app.post('/api/loans/apply', (req, res) => {
@@ -18,7 +19,7 @@ app.post('/api/loans/apply', (req, res) => {
   }
 
   const newApplication = {
-    id: loanApplications.length + 1,
+    id: nextId++,
     studentName: String(studentName).trim(),
     university: String(university).trim(),
     courseOfStudy: String(courseOfStudy).trim(),
