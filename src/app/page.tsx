@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   const [loanAmount, setLoanAmount] = useState(1000000);
@@ -34,6 +35,9 @@ export default function Home() {
         <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">
           Get Pre-Approved Now
         </button>
+        <Link href="/apply" className="ml-4 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">
+          Apply Now
+        </Link>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
